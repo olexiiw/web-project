@@ -1,0 +1,50 @@
+h1 {
+  background-color: hsla(165, 100%, 50%, 1);
+  padding: 16px 24px;
+  border: 3px solid rgb(125, 41, 41);
+  margin: 16px;
+}
+p {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+
+.playpen-sans-regular {
+  font-family: "Playpen Sans", cursive;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+.google-sans-bold {
+  font-family: "Google Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  font-variation-settings:
+    "GRAD" 0;
+}
+main{
+  background-color: #b8afa3;
+  position: relative;
+}
+.my_block {
+  width: 100px;
+  height: 100px;
+  background-color: rgba(125, 200, 220, 0.7);
+  position: fixed;
+  left: 50px;
+  top: 50px;
+}
+section{
+  background-image: url(../image/photo.webp);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: right;
+}
+.gradient{
+  background-image: radial-gradient(circle, green, white);
+}

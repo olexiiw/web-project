@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/style.css">
+  <title>назва сайту</title>
+</head>
+<body>
+  <header>
+    <h1>Назва сайту</h1>
+    <h2>слоган</h2>
+  </header>
+  <nav>
+    <ul>
+      <li><a href="./index.html">Головна</a></li>
+      <li><a href="./news.html">Новини</a></li>
+      <li><a href="./gallery.html">Галерея</a></li>
+      <li><a href="./contacts.html">Контакти</a></li>
+    </ul>
+    </nav>
+    <main>
+      <h3>Контакти</h3>
+      <form action="#" method="post">
+        <label for="username">Ваше ім'я:</label>
+        <input type="text" id="username" name="user_name" required>
+        <br>
+        <label for="userpasswd">Введіть пароль:</label>
+        <input type="password" id="userpasswd" name="password" required>
+        <br>
+        <p>Які напрямки ІТ вас цікавлять?</p>
+        <input type="checkbox" id="topic_web" name="interest" value="web">
+        <label for="topic_web">Веб-розробка</label>
+        <br>
+        <input type="checkbox" id="topic_design" name="interest" value="design">
+        <label for="topic_design">Дизайн</label>
+        <br>
+        <input type="checkbox" id="topic_ai" name="interest" value="ai">
+        <label for="topic_ai">Штучний інтелект</label>
+        <br>
+        <p>Чи погоджуєтеся ви з правилами роботи?</p>
+        <input type="radio" id="rules_yes" name="agree" value="yes">
+        <label for="rules_yes">Так</label>
+        <br>
+        <input type="radio" id="rules_no" name="agree" value="no">
+        <label for="rules_no">Ні</label>
+        <br>
+        <label for="role">Хто ви?</label>
+        <select name="user_role" id="role">
+          <option value="student">Студент</option>
+          <option value="developer">Розробник</option>
+          <option value="teacher">Вчитель</option>
+        </select>
+        <br>
+        <label for="comment">Ваші побажання</label>
+        <br>
+        <textarea name="user_comment" id="comment" rows="4" cols="30"></textarea>
+        <br>
+        <button type="submit">Відправити</button>
+        <button type="reset">Esc</button>
+      </form>
+    </main>
+    <footer>
+      <p>&copy; 2026 р.</p>
+    </footer>
+  
+</body>
+</html>

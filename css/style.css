@@ -1,0 +1,181 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Золоте правило CSS Box Model */
+}
+body {
+  font-family: 'Open Sans', sans-serif;
+  color: #333333; /* Ваш темний колір тексту */
+  background-color: #f8f9fa; /* Світлий фон сторінки */
+  line-height: 1.6; /* Комфортний вагон Інтерсіті для очей */
+  font-size: 16px; /* Базовий розмір - абсолютна одиниця */
+}
+header {
+  background-image: linear-gradient(135deg, #1C5099, #639FA8); /* Використайте кольори з вашої палітри */
+  color: #ffffff;
+  padding: 40px 20px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Сучасна м'яка тінь */
+}
+header h1 {
+  font-family: 'Montserrat', sans-serif; /* Шрифт для заголовка */
+  font-size: 2.5rem; /* Відносна одиниця (2.5 * 16px) */
+  margin-bottom: 10px;
+}
+nav {
+  background-color: #222222;
+  position: sticky; /* Меню "прилипне" до верху */
+  top: 0;
+  z-index: 100; /* Щоб меню було поверх іншого тексту */
+}
+nav ul {
+  list-style-type: none; /* Прибираємо стандартні крапки списку */
+  text-align: center;
+  padding: 15px 0;
+}
+nav ul li {
+  display: inline-block; /* Розташовуємо пункти в один рядок */
+  margin: 0 15px;
+}
+nav ul li a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: bold;
+  transition: color 0.3s ease; /* Плавність зміни стану */
+}
+nav ul li a:hover {
+  color: #639FA8; /* Ваш акцентний колір */
+}
+nav ul li a:focus {
+  outline: 2px dashed #ff9800; /* Доступність: виділення при навігації клавіатурою (Tab) */
+  outline-offset: 4px;
+}
+main section p:first-of-type::first-letter {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #1C5099;
+  float: left; /* Обтікання текстом */
+  margin-right: 8px;
+  line-height: 1;
+}
+main {
+    max-width: 900px; /* Обмежуємо максимальну ширину */
+    margin: 40px auto; /* auto центрує блок по горизонталі */
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px; /* Заокруглені кути */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+main section p {
+    margin-bottom: 20px; /* Соціальна дистанція між абзацами */
+    text-align: justify;
+}
+
+/* --- ЗАГАЛЬНІ СТИЛІ ГАЛЕРЕЇ --- */
+.gallery-section {
+  margin: 50px 20px;
+}
+.section-title {
+  color: #1C5099; /* Колір з нашої палітри */
+  text-align: center;
+  margin-bottom: 30px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2rem;
+}
+/* Дизайн самої картки з фото */
+.card {
+  border-radius: 12px;
+  overflow: hidden; /* Ховаємо кути фотографії, щоб вони теж стали круглими */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Плавна анімація */
+}
+/* Ефект наведення мишки (Hover) */
+.card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 12px 20px rgba(28, 80, 153, 0.2);
+}
+/* Налаштування зображень всередині карток */
+.card img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover; /* МАГІЯ: фото не буде сплющуватися, а обріжеться як треба! */
+}
+/* --- СЕКЦІЯ 1: FLEXBOX --- */
+.flex-container-art {
+  display: flex;
+  flex-wrap: wrap; /* Дозволяємо перенесення на новий рядок */
+  justify-content: center; /* Центруємо картки */
+  gap: 20px; /* Відступи між картками */
+}
+
+.flex-container-art .card {
+  flex: 1 1 300px; /* Рости: 1, Стискатися: 1, Базова ширина: 300px */
+  height: 250px;
+}
+/* --- СЕКЦІЯ 2: BASIC GRID --- */
+.grid-container-cg {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; /* Три однакові колонки */
+  gap: 20px;
+}
+
+.grid-container-cg .card {
+  height: 250px;
+}
+/* --- СЕКЦІЯ 3: GRID AREAS (БЕНТО-БОКС) --- */
+.grid-bento-ai {
+  display: grid;
+  gap: 15px;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 250px 250px; /* Два рядки по 250px */
+  
+  /* Малюємо макет словами: */
+  grid-template-areas: 
+    "big big pic2"
+    "big big pic3"
+    "pic4 pic5 pic6";
+}
+
+/* Прив'язуємо класи карток до імен на нашому "кресленні" */
+.ai-1 { grid-area: big; }
+.ai-2 { grid-area: pic2; }
+.ai-3 { grid-area: pic3; }
+.ai-4 { grid-area: pic4; }
+.ai-5 { grid-area: pic5; }
+.ai-6 { grid-area: pic6; }
+
+/* --- АДАПТИВНІСТЬ (МЕДІА-ЗАПИТИ) --- */
+
+/* Для планшетів (екрани менше 900px) */
+@media (max-width: 900px) {
+  .grid-container-cg {
+    grid-template-columns: 1fr 1fr; /* Робимо 2 колонки замість 3 */
+  }
+  
+  .grid-bento-ai {
+    grid-template-columns: 1fr 1fr;
+    /* Перемальовуємо Бенто-бокс для планшета */
+    grid-template-areas: 
+      "big big"
+      "big big"
+      "pic2 pic3"
+      "pic4 pic5"
+      "pic6 pic6";
+  }
+}
+
+/* Для смартфонів (екрани менше 600px) */
+@media (max-width: 600px) {
+  .grid-container-cg, 
+  .grid-bento-ai {
+    grid-template-columns: 1fr; /* Все в одну колонку */
+    grid-template-areas: none; /* Вимикаємо складне малювання */
+  }
+  
+  .grid-bento-ai .card {
+    grid-area: auto; /* Повертаємо картки до стандартної поведінки */
+    height: 300px;
+  }
+}
