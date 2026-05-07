@@ -1,0 +1,12 @@
+body { font-family: sans-serif; padding: 20px; background: #f4f4f9; }
+.catalog { display: flex; gap: 15px; flex-wrap: wrap; }
+.card { 
+    background: white; 
+    padding: 15px; 
+    border-radius: 8px; 
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    text-align: center;
+    width: 150px;
+}
+.card button { background: #ff6b6b; color: white; border: none; padding: 8px; cursor: pointer; }
+.receipt { background: #2f3542; color: white; padding: 20px; margin-top: 20px; border-radius: 8px; }
