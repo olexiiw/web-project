@@ -1,0 +1,14 @@
+# Правила для всіх пошукових роботів
+User-agent: *
+Disallow: /admin/
+Disallow: /config/
+Disallow: /private/
+Disallow: /js/
+Disallow: /css/
+
+# Дозволено для індексування (перестраховка для важливих папок)
+Allow: /css/main.css
+Allow: /js/app.js
+
+# Посилання на карту сайту (вказуйте абсолютний URL вашого сайту)
+Sitemap: https://olexiiw.github.io/web-project/
